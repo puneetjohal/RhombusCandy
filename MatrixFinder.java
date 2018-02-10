@@ -71,7 +71,7 @@ public class MatrixFinder
          foo += "|\n";
        }
 
-       
+
        System.out.println("Matrix:");
        System.out.println(foo);
        System.out.println("Searching for the value 4...");
@@ -122,6 +122,6 @@ public class MatrixFinder
        System.out.println(search(8,fancy) + "\n");
        System.out.println("Searching for the value 0...");
        System.out.println(search(0,fancy) + "\n");
-       
+
     }
 }

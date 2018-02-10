@@ -2,11 +2,9 @@ public class MFDriver {
 
   //populates matricies with random integer values between 0 and 1000
   public static void populate (int[][] arr) {
-    int cntr = 0;
     for (int r = 0; r < arr.length; r++) {
       for (int c = 0; c < arr.length; c++) {
-        arr[r][c] = cntr;
-        cntr++;
+        arr[r][c] = (int)(Math.random() * 1000);
       }
     }
   }
@@ -22,9 +20,16 @@ public class MFDriver {
 
   public static void main (String[] args) {
 
-    //1 thousand trials
+    //10 "warm up" trials
+    for (int w = 0; w < 10; w++){
+      int[][] foo = new int[1000][1000];
+      populate(foo);
+      getTime(foo);
+    }
+
+    //1000 experimental trials
     for (int i = 0; i < 1000; i++) {
-      //for each trial test 100 different randomly generated matrices of the same length for the worst case
+      //for each trial test search method on 100 different randomly generated matricies for the worst case (bottom left corner)
       int n = 1000 + (i*100); //n increases by 100 after each trial
       long totalTime = 0;
       for (int x = 0; x < 100; x++) {
@@ -32,7 +37,7 @@ public class MFDriver {
         populate(arr);
         totalTime += getTime(arr);
       }
-      System.out.println( n + "," + totalTime/100 );
+      System.out.println( n + "," + (double)totalTime/100 );
     }
 
   }
