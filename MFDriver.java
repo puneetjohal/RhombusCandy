@@ -22,24 +22,24 @@ public class MFDriver {
 
   public static void main (String[] args) {
 
-    //100 "warm up" trials
-    for (int w = 0; w < 100; w++){
+    //1000 "warm up" trials
+    for (int w = 0; w < 1000; w++){
       int[][] foo = new int[1000][1000];
       populate(foo);
       getTime(foo);
     }
 
-    //360 experimental cases
-    for (int i = 0; i < 360; i++) {
-      //for each trial test search method 1000 times on the same, ordered matrix for the worst case (bottom left corner) --> 360,000 trials total
+    //361 experimental cases
+    for (int i = 0; i < 361; i++) {
+      //for each trial test search method 10,000 times on the same, ordered matrix for the worst case (bottom left corner) --> 3,610,000 trials total
       int n = 1000 + (i*25); //array length n increases by 25 between cases
       long totalTime = 0;
       int[][]arr = new int[n][n];
       populate(arr);
-      for (int x = 0; x < 1000; x++) {
+      for (int x = 0; x < 10000; x++) {
         totalTime += getTime(arr);
       }
-      System.out.println( n + "," + totalTime/(long)100 );
+      System.out.println( n + "," + totalTime/(long)10000 );
     }
 
   }
