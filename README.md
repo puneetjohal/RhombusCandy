@@ -1,4 +1,5 @@
-# RhombusCandy -- Puneet Johal, Nadine Jackson, Daniel Jiang
+# RhombusCandy
+## Puneet Johal, Nadine Jackson, Daniel Jiang
 ## APCS2 pd2
 ## L00 -- But What Does the Data Say?
 
