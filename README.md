@@ -6,14 +6,14 @@
 If we run our matrix search method on matrices of increasing lengths, the runtime will also increase at a constant rate. In other words, the runtime of our MatrixFinder search is linear.
 
 ### Background
-We devised class MatrixFinder with method search which takes an int parameter and a two dimensional int array parameter. This method will return the coordinates of the earliest occurrence (the one with the lowest index) of the integer in the matrix, or -1 if the number is not found, in the form of a String. We predicted that the runtime of our program was linear, given that the number of comparisons that needed to be made to search for the number, in the worst case (that the number was at the bottom left corner, '''java [matrix.length][0] ''', or wasn't in the matrix at all), was equal to matrix.length. To test this, we created MFDriver, and input the data we collected into data.csv.
+We devised class MatrixFinder with method search which takes an int parameter and a two dimensional int array parameter. This method will return the coordinates of the earliest occurrence (the one with the lowest index) of the integer in the matrix, or -1 if the number is not found, in the form of a String. We predicted that the runtime of our program was linear, given that the number of comparisons that needed to be made to search for the number, in the worst case (that the number was at the bottom left corner, \[matrix.length\]\[0\], or wasn't in the matrix at all), was equal to matrix.length. To test this, we created MFDriver, and input the data we collected into data.csv.
 
 ### Experimental Methodology
 1. Test arrays from length 1,000 to 10,000, increasing the length by 25 each time.
 2. Perform 1,000 warm-up trials on an array of length 1,000. Populate with integers in ascending order and search for the worst case.
 3. For each different length array:
-   * Instantiate a matrix and populate it with integers in ascending order, as per the requirement of '''java MatrixFinder.search() ''' (every row and column of the matrix must be sorted).
-   * Run 10,000 timed searches on the matrix, each time searching for the worst case, the value at '''java [matrix.length][0] '''. After each search, add the time (in nanoseconds) to a total counter.
+   * Instantiate a matrix and populate it with integers in ascending order, as per the requirement of MatrixFinder.search() (every row and column of the matrix must be sorted).
+   * Run 10,000 timed searches on the matrix, each time searching for the worst case, the value at \[matrix.length\]\[0\]. After each search, add the time (in nanoseconds) to a total counter.
    * Divide the total time by 10,000 to find the average runtime and print matrix.length + "," + average time.
 4. Compile and run the driver, replacing the standard output with the file data.csv in order to graph data and make it easier to analyze.
 
@@ -26,7 +26,7 @@ We devised class MatrixFinder with method search which takes an int parameter an
 * Added "warm up" trials, to eliminate lag at the beginning affecting the runtimes of the smaller sized matrices
 
 ### Results
-Link to our googsheet: [](https://docs.google.com/spreadsheets/d/158PVPJVmrnwlHIDm--zrcxt6GDy1F1RMeUQLtwpFdFw/edit?usp=sharing)
+Link to our googsheet: [https://docs.google.com/spreadsheets/d/158PVPJVmrnwlHIDm--zrcxt6GDy1F1RMeUQLtwpFdFw/edit?usp=sharing](https://docs.google.com/spreadsheets/d/158PVPJVmrnwlHIDm--zrcxt6GDy1F1RMeUQLtwpFdFw/edit?usp=sharing)
 
 ![Graph of our data](chart.png)
 
